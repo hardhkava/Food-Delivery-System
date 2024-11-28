@@ -127,7 +127,7 @@ void afterloggingin(struct node *head, char username[50], char password[50]) {
     printf("2. View Profile\n");
     printf("3. Add Balance\n");
     printf("4. View Cart\n");
-    printf("5. Logout");
+    printf("5. Logout\n");
     int c;
     scanf("%d", &c);
     getchar();
@@ -168,7 +168,6 @@ void afterloggingin(struct node *head, char username[50], char password[50]) {
             printf("Logging out...\n");
             printf("Press enter to go back...");
             while(getchar() != '\n');
-            getchar();
             system("./main");
             break;
         default:
