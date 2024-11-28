@@ -1,20 +1,26 @@
-CC=gcc
-OBJS=customer_UI.o restowner_UI.o delivery_UI.o
-EXECS=customer restowner delivery
+CC = gcc
+OBJS = admin_ui.o customerUI.o delivery.o restaurantUI.o main.o
+EXECS = admin customer delivery restaurant main
 
 all: $(EXECS)
 
-customer: customer_UI.o
+admin: admin_ui.o
 	$(CC) $< -o $@
 
-restowner: restowner_UI.o
-	$(CC) $< -lm -o $@
+customer: customerUI.o
+	$(CC) $< -o $@
 
-delivery: delivery_UI.o
-	$(CC) $< -lm -o $@
+delivery: delivery.o
+	$(CC) $< -o $@
+
+restaurant: restaurantUI.o
+	$(CC) $< -o $@
+
+main: main.o
+	$(CC) $< -o $@
 
 %.o: %.c
-	$(CC) -c $< -lm
+	$(CC) -c $<
 
 clean:
 	rm -f $(OBJS) $(EXECS)
