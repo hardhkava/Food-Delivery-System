@@ -386,6 +386,7 @@ while (z==1){
 		    accepted_orders();}
 		if(f==5){
 			system("./main");
+			exit(0);
 		} 
 	    } 
 return 0;
