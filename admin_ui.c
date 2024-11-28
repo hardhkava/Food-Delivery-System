@@ -31,6 +31,7 @@ void admin_menu(){
                                 break;
                         case 4: printf("Logging out...\n");
 				system("clear");
+				system("./main");
                                 return;
                         default:
                                 printf("Invalid choice. Please try again.\n");
