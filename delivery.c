@@ -368,7 +368,7 @@ while (z==1){
 	    system("clear");
         logo();
             int f;
-	    print_centered("**************************\n");
+	    print_centered("***********************************************************************\n\n\n");
             printf("Press the required key\n1.View orders\n2.View Profile\n3.Accept Orders\n4.Accepted Orders\n5.Exit\n");
             scanf("%d",&f);
             if (f==1){avail_orders();};
