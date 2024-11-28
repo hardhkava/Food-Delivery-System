@@ -10,7 +10,7 @@ void admin_menu(){
         int n, rnum=0;
         while(1){
 		logo();
-		printf("***********************************************************************\n\n\n");
+		center_text("***********************************************************************\n\n\n");
 
 		printf("Number of restaurants currently associated with HARDS: %d\n", rnum);
 
@@ -51,7 +51,7 @@ void login(){
         while (attempts>0){
 		system("clear");
 		logo();
-		printf("***********************************************************************\n\n\n");
+		center_text("***********************************************************************\n\n\n");
                 printf("Enter username: ");
                 fgets(user, 100, stdin);
                 user[strcspn(user, "\n")] = '\0';
