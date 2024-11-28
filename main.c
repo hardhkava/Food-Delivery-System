@@ -22,7 +22,7 @@ int main(){
             system("./customer");
             break;
         case 2:
-            system("./deliveryperson");
+            system("./delivery");
             break;
         case 3:
             system("./restOwner");
