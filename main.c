@@ -13,6 +13,7 @@ int main(){
     printf("3. Restaurant Owner\n");
     printf("4. Admin\n");
     printf("5. Exit\n");
+    printf("Type serial number: ");
 
 
     int choice;
