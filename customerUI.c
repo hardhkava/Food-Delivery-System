@@ -81,6 +81,7 @@ void loadl(struct node **ptrhead) {
 
 void login(struct node *head) {
     system("clear");
+    logo();
     char username[50], password[50];
     int attempts = 0, logged_in = 0;
 
