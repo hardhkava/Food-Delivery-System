@@ -1,2 +1,2 @@
-"cheesy volcano","dominos","hardh kava",5,250.00
-"margherita pizza","dominos","hardh kava",6,100.00
+"cheesy volcano","dominos","hardh kava",5,250
+"margherita pizza","dominos","hardh kava",6,100
