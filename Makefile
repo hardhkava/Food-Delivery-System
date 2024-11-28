@@ -1,31 +1,20 @@
-# Compiler and flags
-CC = gcc
-CFLAGS = -Wall -g
+CC=gcc
+OBJS=customer_UI.o restowner_UI.o delivery_UI.o
+EXECS=customer restowner delivery
 
-# Executable target
-TARGET = main
+all: $(EXECS)
 
-# Source files
-SRCS = main.c admin_ui.c customerUI.c delivery.c restaurantUI.c
+customer: customer_UI.o
+	$(CC) $< -o $@
 
-# Object files (replace .c with .o in SRCS)
-OBJS = $(SRCS:.c=.o)
+restowner: restowner_UI.o
+	$(CC) $< -lm -o $@
 
-# Header files
-HEADERS = admin_func.c center_logo.c customerfuncs.h restaurantfuncs.h welcome.c customers.txt deliveryworkers.txt restaurants.txt orders.txt completed.txt
+delivery: delivery_UI.o
+	$(CC) $< -lm -o $@
 
-# Default target: build the executable
-all: $(TARGET)
+%.o: %.c
+	$(CC) -c $< -lm
 
-# Rule to build the executable
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
-
-# Rule to compile source files into object files
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# Clean up generated files
-.PHONY: clean
 clean:
-	rm -f $(TARGET) $(OBJS)
+	rm -f $(OBJS) $(EXECS)
