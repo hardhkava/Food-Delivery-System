@@ -42,6 +42,7 @@ struct order_completed *headcurrent=NULL;
 void new_user(){
 	system("clear");
     logo();
+	print_centered("***********************************************************************\n\n\n");
         struct logindelivery *Node;
         char user[50];
         char pass[50];
@@ -134,6 +135,7 @@ int login() {
     while (1) {
 	system("clear");
     logo();
+	print_centered("***********************************************************************\n\n\n");
         int in1;
         printf("Press 1 for New User\n");
         printf("Press 2 for Existing User\n");
@@ -162,6 +164,7 @@ int login() {
                     temp_current = local_temp;
 		    system("clear"); 
             logo();
+			print_centered("***********************************************************************\n\n\n");
                     printf("         LOGIN SUCCESSFUL            \n");
                     return 1;
                 }
@@ -182,6 +185,7 @@ int login() {
 void avail_orders() {
 	system("clear");
     logo();
+	print_centered("***********************************************************************\n\n\n");
     printf("AVAILABLE ORDERS\n");
     int order_id, amount;
     char items[200], restaurant[50],cust_name[50];
