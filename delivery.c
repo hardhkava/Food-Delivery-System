@@ -385,7 +385,7 @@ while (z==1){
             logo();
 		    accepted_orders();}
 		if(f==5){
-			system("./main");
+			exit(0);
 		} 
 	    } 
 return 0;
