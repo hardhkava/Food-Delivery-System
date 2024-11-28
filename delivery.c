@@ -371,7 +371,7 @@ while (z==1){
 	    print_centered("**************************\n");
             print_centered("WELCOME\n");
 	        print_centered("**************************\n");
-            printf("Press the required key\n1.View orders\n2.View Profile\n3.Accept Orders\n4.Accepted Orders\n");
+            printf("Press the required key\n1.View orders\n2.View Profile\n3.Accept Orders\n4.Accepted Orders\n5.Exit");
             scanf("%d",&f);
             if (f==1){avail_orders();};
             if (f==2){
@@ -384,6 +384,9 @@ while (z==1){
             if (f==4){system("clear");
             logo();
 		    accepted_orders();}
+		if(f==5){
+			system("./main");
+		} 
 	    } 
 return 0;
 }
