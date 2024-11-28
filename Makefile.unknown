@@ -1,0 +1,6 @@
+CC = gcc
+OUT = Final
+Final:
+	$(CC) customers.c delivery.c restaurantUI.c admin_func.c admin_ui.c main.c -o $(OUT)
+clean:
+	rm -f $(OUT)
