@@ -12,7 +12,7 @@ int main(){
     printf("2. Delivery Guy\n");
     printf("3. Restaurant Owner\n");
     printf("4. Admin\n");
-    printf("5. Exit");
+    printf("5. Exit\n");
 
 
     int choice;
