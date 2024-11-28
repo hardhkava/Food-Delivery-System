@@ -10,6 +10,7 @@ void afterloggingin(struct node *head, char username[50], char password[50]);
 void registerc(struct node **ptrhead) {
     system("clear");
     logo();
+     center_text("***********************************************************************\n\n\n");
 
     struct node *new = malloc(sizeof(struct node));
     new->link = NULL;
@@ -82,6 +83,7 @@ void loadl(struct node **ptrhead) {
 void login(struct node *head) {
     system("clear");
     logo();
+    center_text("***********************************************************************\n\n\n");
     char username[50], password[50];
     int attempts = 0, logged_in = 0;
 
@@ -123,6 +125,7 @@ void login(struct node *head) {
 void afterloggingin(struct node *head, char username[50], char password[50]) {
     system("clear");
     logo();
+     center_text("***********************************************************************\n\n\n");
     printf("1. Order\n");
     printf("2. View Profile\n");
     printf("3. Add Balance\n");
@@ -342,6 +345,7 @@ void viewCart(struct node *head, struct customer *cust) {
 void order(struct node *head, char username[50], char password[50]) {
     system("clear");
     logo();
+     center_text("***********************************************************************\n\n\n");
     FILE *restFile = fopen("restaurants.txt", "r");
     if (restFile == NULL) {
         printf("Could not open the restaurant file.\n");
@@ -440,6 +444,7 @@ void order(struct node *head, char username[50], char password[50]) {
 void viewProfile(struct node *head, char username[50], char password[50]) {
     system("clear");
     logo();
+     center_text("***********************************************************************\n\n\n");
     struct node *temp = head;
     while (temp != NULL) {
         if (strcmp(temp->c.username, username) == 0 && strcmp(temp->c.password, password) == 0) {
@@ -460,6 +465,7 @@ void viewProfile(struct node *head, char username[50], char password[50]) {
 int main() {
     system("clear");
     logo();
+     center_text("***********************************************************************\n\n\n");
     struct node *head = NULL;
     int choice;
     loadl(&head);
