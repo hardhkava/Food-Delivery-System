@@ -21,7 +21,7 @@ void loginPage(){
     char user[50], pwd[25];
     system("clear");
     logo();
-    center_text("======================================================================\n\n\n");
+    center_text("***********************************************************************\n\n\n");
     center_text("------LOGIN PAGE FOR RESTAURANTS------\n");
 
     char choice[10];
@@ -88,7 +88,7 @@ void loginPage(){
 void mainpage(){
         system("clear");
         logo();
-        center_text("######################################################\n\n\n");
+        center_text("***********************************************************************\n\n\n");
         printf("Select an option: \n\n");
         printf("1. View restaurant menu\n");
         printf("2. Add/Remove a food from menu\n");
@@ -106,6 +106,7 @@ void mainpage(){
             case 2:{
                 system("clear");
                 logo();
+		center_text("***********************************************************************\n\n\n");
                 char choice1[50];
                 printf("Add or Remove food?: ");
                 scanf("%s", choice1);
@@ -150,6 +151,7 @@ void mainpage(){
             case 3:{
                 system("clear");
                 logo();
+		center_text("***********************************************************************\n\n\n");
                 viewProfile(loggedinRest);
                 break;
             }
