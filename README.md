@@ -1,5 +1,5 @@
 # Food-Delivery-System
-C Project by Ctrl Alt Elite
+HARDS by Ctrl Alt Elite
 =======================================================================
 Members and their roles:
   1. Aditya Bhat - Customer
