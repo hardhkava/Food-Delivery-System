@@ -3,7 +3,7 @@
 #include <string.h>
 #include "welcome.c"
 #include <ctype.h>
-
+#include "center_logo.c"
 struct logindelivery{
     char username[50];
     char password[50];
@@ -41,6 +41,7 @@ struct order_completed *headcurrent=NULL;
 
 void new_user(){
 	system("clear");
+    logo();
         struct logindelivery *Node;
         char user[50];
         char pass[50];
@@ -132,6 +133,7 @@ void load(){
 int login() {
     while (1) {
 	system("clear");
+    logo();
         int in1;
         printf("Press 1 for New User\n");
         printf("Press 2 for Existing User\n");
@@ -159,6 +161,7 @@ int login() {
                     flag = 1;
                     temp_current = local_temp;
 		    system("clear"); 
+            logo();
                     printf("         LOGIN SUCCESSFUL            \n");
                     return 1;
                 }
@@ -178,6 +181,7 @@ int login() {
 
 void avail_orders() {
 	system("clear");
+    logo();
     printf("AVAILABLE ORDERS\n");
     int order_id, amount;
     char items[200], restaurant[50],cust_name[50];
@@ -362,6 +366,7 @@ int main(){
 int z = login();
 while (z==1){
 	    system("clear");
+        logo();
             int f;
 	    print_centered("**************************\n");
             print_centered("WELCOME\n");
@@ -371,10 +376,13 @@ while (z==1){
             if (f==1){avail_orders();};
             if (f==2){
 		    system("clear");
+            logo();
 		    view_profileyn();}
             if (f==3){system("clear"); 
+            logo();
 		    choose_order();}
             if (f==4){system("clear");
+            logo();
 		    accepted_orders();}
 	    } 
 return 0;
