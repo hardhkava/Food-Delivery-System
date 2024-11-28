@@ -271,7 +271,8 @@ void viewCart(struct node *head, struct customer *cust) {
 
             while (cust->carthead != NULL) {
                 struct cart *tempcart = cust->carthead;
-                fprintf(fptr, "\"%s\",\"%s\",\"%s\",%d,%.2f\n", tempcart->food, selectedRest,cust->name, orderID, tempcart->price);
+                int z=(int)tempcart->price;
+                fprintf(fptr, "\"%s\",\"%s\",\"%s\",%d,%d\n", tempcart->food, selectedRest,cust->name, orderID, z);
                 cust->carthead = cust->carthead->next;
                 free(tempcart);
                 orderID++;
