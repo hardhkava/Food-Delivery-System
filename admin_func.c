@@ -14,20 +14,19 @@ struct restaurant *restHead;
 int check_username(const char *username) {
         FILE *fptr = fopen("restaurants.txt", "r");
     	if (fptr == NULL) {
-        	return 0; // If file doesn't exist, no usernames exist yet
+        	return 0; 
     	}
 
     	char temp[50];
     	while (fgets(temp, sizeof(temp), fptr)) {
-        	temp[strcspn(temp, "\n")] = '\0'; // Remove trailing newline
-        	// Skip the restaurant name
+        	temp[strcspn(temp, "\n")] = '\0'; 
+        	
         	fgets(temp, sizeof(temp), fptr);
-        	temp[strcspn(temp, "\n")] = '\0'; // Read and clean username
+        	temp[strcspn(temp, "\n")] = '\0'; 
         	if (strcmp(temp, username) == 0) {
             		fclose(fptr);
             		return 1; // Username found
         	}
-        	// Skip the rest of the restaurant details
         	for (int i = 0; i < 4; i++) {
             		fgets(temp, sizeof(temp), fptr);
         	}
