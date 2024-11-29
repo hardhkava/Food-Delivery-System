@@ -11,13 +11,14 @@ void admin_menu(){
         while(1){
 		logo();
 		center_text("***********************************************************************\n\n\n");
-
 		printf("Number of restaurants currently associated with HARDS: %d\n", rnum);
+		printf("\n");
 
                 printf("1. Add a restaurant\n");
                 printf("2. Remove a restaurant\n");
                 printf("3. Remove a delivery partner\n");
                 printf("4. Logout\n");
+		printf("\n");
                 printf("What would you like to do? : ");
 		scanf("%d", &n);
 
