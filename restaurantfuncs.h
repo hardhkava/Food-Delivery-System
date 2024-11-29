@@ -37,77 +37,6 @@ void centerText(const char *text) {
     printf("%*s%s\n", padding, "", text);
 }
 
-
-
-void insertRest(char name[], char user[], char pwd[], char address[], char owner[], char phone[], float balance){
-    struct restaurant *newrest;
-    newrest = (struct restaurant *)malloc(sizeof(struct restaurant));
-    strcpy(newrest->name, name);
-    strcpy(newrest->user, user);
-    strcpy(newrest->pwd, pwd);
-    strcpy(newrest->address, address);
-    strcpy(newrest->owner_name, owner);
-    strcpy(newrest->phone, phone);
-    newrest->balance = balance;
-
-    newrest->foodHead = NULL;
-
-    if(restHead == NULL){
-        newrest->next = NULL;
-        restHead = newrest;
-    }
-    else{
-        newrest->next = restHead;
-        restHead = newrest;
-    }
-
-    FILE *fptr = fopen("restaurants.txt", "a");
-    fprintf(fptr, "%s\n%s\n%s\n%s\n%s\n%s\n%f\n", newrest->name, newrest->user, newrest->pwd, newrest->address, newrest->owner_name, newrest->phone, newrest->balance);
-
-    fclose(fptr);
-}
-
-void deleteRestaurant(char restName[]){
-    struct restaurant *travp = restHead;
-    struct restaurant *prevptr = NULL;
-    while((travp != NULL) && (strcmp(travp->name, restName) != 0)){
-        prevptr = travp;
-        travp = travp->next;
-    }
-
-    if(travp == NULL){
-        printf("restaurant not found...\n");
-        return;
-    }
-
-    struct food *foodptr = travp->foodHead;
-    while(foodptr != NULL){
-        struct food *tempfood = foodptr;
-        foodptr = foodptr->next;
-        free(tempfood);
-    }
-
-    if(prevptr == NULL){
-        restHead = travp->next;
-    }
-    else{
-        prevptr->next = travp->next;
-    }
-    free(travp);
-
-    char fileName[50];
-    sprintf(fileName, "%s_menu.txt", restName);
-    if(remove(fileName) == 0){
-        printf("Menu file deleted\n");
-    }
-    else{
-        printf("Menu not found.\n");
-    }
-    printf("Restaurant %s deleted.\n", restName);
-    
-}
-
-
 void addFood(char restName[], char foodName[], char vegStatus[], float price){
     struct restaurant *travp = restHead;
     struct food *newFood;
@@ -138,7 +67,7 @@ void addFood(char restName[], char foodName[], char vegStatus[], float price){
     FILE *fptr = fopen(fileName, "a");
     
     fprintf(fptr, "%s\n%s\n%.2f\n", foodName, vegStatus, price);
-    printf("food added to menu succesfully.\n");
+    printf("Food added to menu succesfully.\n");
 
     while(getchar() != '\n');
     printf("Press enter to go back...\n");
@@ -162,7 +91,7 @@ void removeFood(char restName[], char foodName[]){
 
     if(travp->foodHead == NULL){
         while(getchar() != '\n');
-        printf("there's no food in the menu...\nPress enter to go back:");
+        printf("There's no food in the menu...\nPress enter to go back:");
         getchar();
         return;
     }
@@ -231,7 +160,7 @@ void viewMenu(char restName[]){
     FILE *menuptr = fopen(fileName, "r");
 
     if (menuptr == NULL) {
-        printf("menu file for %s not found...\n", restName);
+        printf("Menu for %s not found...\n", restName);
         printf("Press enter to go back...");
         while(getchar() != '\n');
         getchar();
@@ -296,7 +225,7 @@ void loadRestaurants(){
     FILE *fptr = fopen("restaurants.txt", "r");
 
     if(fptr == NULL){
-        printf("no restaurants available...\n");
+        printf("No restaurants available...\n");
         return;
     }
 
