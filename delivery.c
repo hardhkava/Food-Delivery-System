@@ -93,7 +93,7 @@ void new_user(){
             current->node=Node;
             current=Node;
         }
-        printf("User crieated successfully.\n");
+        printf("User created successfully.\n");
 }
 
 
