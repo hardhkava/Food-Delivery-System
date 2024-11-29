@@ -242,7 +242,7 @@ void remove_dp(){
         	remove("hemjad.txt"); 
         }
        	else {
-        	remove("deliverypartners.txt");
-        	rename("hemjad.txt", "deliverypartners.txt");
+        	remove("deliveryworkers.txt");
+        	rename("hemjad.txt", "deliveryworkers.txt");
 	}
 }
