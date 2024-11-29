@@ -7,12 +7,10 @@
 #define admin_password "ctrl_alt_elite"
 
 void admin_menu(){
-        int n, rnum=0;
+        int n;
         while(1){
 		logo();
 		center_text("***********************************************************************\n\n\n");
-		printf("Number of restaurants currently associated with HARDS: %d\n", rnum);
-		printf("\n");
 
                 printf("1. Add a restaurant\n");
                 printf("2. Remove a restaurant\n");
@@ -24,10 +22,8 @@ void admin_menu(){
 
                 switch (n) {
                         case 1: add_input();
-				rnum += 1;
                                 break;
                         case 2: remove_rest();
-				rnum -= 1;
                                 break;
                         case 3: remove_dp();
                                 break;
