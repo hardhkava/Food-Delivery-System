@@ -91,7 +91,7 @@ void mainpage(){
         center_text("***********************************************************************\n\n\n");
         printf("Select an option: \n\n");
         printf("1. View restaurant menu\n");
-        printf("2. Add/Remove a food from menu\n");
+        printf("2. Edit menu\n");
         printf("3. View restaurant profile\n");
         printf("4. Logout\n");
 
@@ -108,7 +108,7 @@ void mainpage(){
                 logo();
 		center_text("***********************************************************************\n\n\n");
                 char choice1[50];
-                printf("Add or Remove food?: ");
+                printf("Do you want to add or remove a food item?: ");
                 scanf("%s", choice1);
                 toLowerCase(choice1);
 
@@ -136,7 +136,7 @@ void mainpage(){
                     char food[50];
                     while(getchar() != '\n');
 
-                    printf("Which food do you want to remove: ");
+                    printf("Which food item do you want to remove: ");
                     fgets(food, sizeof(food), stdin);
                     food[strcspn(food, "\n")] = '\0';
 
