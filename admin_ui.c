@@ -17,7 +17,7 @@ void admin_menu(){
                 printf("1. Add a restaurant\n");
                 printf("2. Remove a restaurant\n");
                 printf("3. Remove a delivery partner\n");
-                printf("4. ut\n");
+                printf("4. Logout\n");
                 printf("What would you like to do? : ");
 		scanf("%d", &n);
 
