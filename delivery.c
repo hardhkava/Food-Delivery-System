@@ -67,7 +67,7 @@ void new_user(){
         getchar();
 
         while (1) {
-        printf("Owner's phone number: ");
+        printf("Enter your phone number: ");
         fgets(phone, 11, stdin);
         phone[strcspn(phone, "\n")] = '\0';
         if (strlen(phone)!=10){
